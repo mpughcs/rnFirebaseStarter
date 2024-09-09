@@ -12,7 +12,8 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.maxpughdev.OneButton"
     },
     "android": {
       "adaptiveIcon": {
@@ -36,7 +37,18 @@
             "./assets/fonts/Montserrat-SemiBoldItalic.ttf"
           ]
         }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location."
+        }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "99eed640-d4c2-4a4e-937e-eb68b8b69d2a"
+      }
+    }
   }
 }
