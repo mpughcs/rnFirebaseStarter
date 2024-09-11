@@ -1,27 +1,27 @@
 import { StyleSheet, Text } from "react-native"
 import { Colors } from "./constants/Colors"
 
-export function Heading1({ children, color = Colors.lightest, numberOfLines, style}) {
+export function Heading1({ children, color = Colors.action3, numberOfLines, style}) {
     return (
         <Text numberOfLines={numberOfLines} style={[styles.header1, { color }, style]}>{children}</Text>
     )
 }
-export function Heading2({ children, color = Colors.lightest, numberOfLines, style}) {
+export function Heading2({ children, color = Colors.action3, numberOfLines, style}) {
     return (
         <Text numberOfLines={numberOfLines} style={[styles.header2, { color }, style]}>{children}</Text>
     )
 }
-export function Heading3({ children, color = Colors.lightest, numberOfLines, style}) {
+export function Heading3({ children, color = Colors.action3, numberOfLines, style}) {
     return (
         <Text numberOfLines={numberOfLines} style={[styles.header3, { color }, style]}>{children}</Text>
     )
 }
-export function Body1({ children, color = Colors.lightest, numberOfLines, style}) {
+export function Body1({ children, color = Colors.action3, numberOfLines, style}) {
     return (
         <Text numberOfLines={numberOfLines} style={[styles.body1, { color }, style]}>{children}</Text>
     )
 }
-export function Body2({ children, color = Colors.lightest, numberOfLines, style}) {
+export function Body2({ children, color = Colors.action3, numberOfLines, style}) {
     return (
         <Text numberOfLines={numberOfLines} style={[styles.body2, { color }, style]}>{children}</Text>
     )

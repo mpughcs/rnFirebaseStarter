@@ -2,17 +2,13 @@ import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { useFonts } from 'expo-font';
 import { useState, useEffect } from 'react';
-import * as SplashScreen from 'expo-splash-screen';
-import { Heading1, Heading2, Heading3, Body1, Body2 } from './typography';
 import { auth } from './FirebaseConfig';
-import Login from './Screens/Login';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import * as Location from 'expo-location';
 import AuthenticationdNavigator from './Navigation/AuthenticationNavigator';
 import { NavigationContainer } from '@react-navigation/native';
-import { Colors } from './constants/Colors';
 import AuthenticatedNavigator from './Navigation/AuthenticatedNavigator';
-
+import { LocationProvider } from './src/context/LocationContext';
+import { PicturesProvider } from './src/context/PicturesContext';
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -42,13 +38,24 @@ export default function App() {
       <Text>Loading</Text>
     )
   }
-  console.log(user)
+  // console.log(user)
 
   return (
     <SafeAreaProvider>
+
       <NavigationContainer>
-        {user ? <AuthenticatedNavigator /> : <AuthenticationdNavigator />}
+
+        {user ?
+          <LocationProvider>
+            <PicturesProvider>
+
+              <AuthenticatedNavigator />
+            </PicturesProvider>
+          </LocationProvider>
+
+          : <AuthenticationdNavigator />}
       </NavigationContainer>
+      <StatusBar style="light" />
     </SafeAreaProvider>
   );
 }
